@@ -3,4 +3,5 @@ $(document).ready(function () {
     $(".textButton").kendoButton();
     $("#admin").kendoButton();
     $(".kendoSelect").kendoDropDownList();
+
 });
