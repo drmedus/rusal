@@ -1,0 +1,118 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang=""> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/kendo.common-material.min.css">
+    <link rel="stylesheet" href="css/kendo.material.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--[if lt IE 9]>
+        <!--<script src="js/vendor/html5-3.6-respond-1.4.2.min.js"></script>-->
+    <script src="js/vendor/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div class="wrapper">
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-2">
+                    <a class="logo" href="/"><img src="img/logo.jpg" alt="РУСАЛ"></a>
+                </div>
+                <div class="col-xs-5">
+                    <div class="page-title">Мой кабинет</div>
+                </div>
+                <div class="col-xs-5">
+                    <div class="row">
+                        <div class="col-xs-12 text-right admin-contacts">Контакты администратора</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 text-right"><a class="phone" href="tel:+749557225053">+7 495 572 250
+                            53</a> <a class="mail" href="mailto:admin@rusal.ru">admin@rusal.ru</a></div>
+                    </div>
+                    <div class="row header-controls">
+                        <div class="col-xs-5 text-right">
+                            <button class="textButton">Администрирование</button>
+                        </div>
+                        <div class="col-xs-7 text-right">
+                            <select class="kendoSelect">
+                                <option>Администратор</option>
+                                <option>HR-Менеджер</option>
+                                <option>Пользователь</option>
+                            </select>
+                            <button id="admin"><span class="k-icon k-i-unlock"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row header-menu-container">
+                <div class="col-xs-12">
+                    <ul class="header-menu">
+                        <li><a href="/">Главная</a></li>
+                        <li>
+                            <a href="">Задачи</a>
+                            <ul>
+                                <li><a href="">Имя 1</a></li>
+                                <li><a href="">Длинное имя 2</a></li>
+                                <li><a href="">Имя 3</a></li>
+                                <li><a href="">Имя 4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Уведомления</a></li>
+                        <li><a href="">Оценка и развитие</a></li>
+                        <li><a href="">Медицина ОТ и ПБ</a></li>
+                        <li><a href="">Полезная инфрмация</a></li>
+                        <li><a href="">Зарплаты и льготы</a></li>
+                        <li><a href="">Мой профиль</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="content">
+        <div class="container alerts-container">
+            <div class="row">
+                <div class="elert-item task">
+                    <div class="alert-text">Вам предстоит отпуск (Период/дата очередного отпуска)</div>
+                </div>
+                <div class="elert-item important">
+                    <div class="alert-text">Вам назначена задача: Разработать план проекта</div>
+                    <a class="close-alert" href="/" title="Закрыть">Закрыть</a>
+                </div>
+                <div class="elert-item link">
+                    <div class="alert-text">Вам предстоить пройти обучение: Повышение квалификации</div>
+                    <a class="close-alert" href="/" title="Закрыть">Закрыть</a>
+                    <a class="recall-alert" href="/" title="Напомнить позже">Закрыть</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/kendo.ui.core.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
