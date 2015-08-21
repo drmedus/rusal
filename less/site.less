@@ -2,15 +2,33 @@
   //border: 1px solid rgba(86, 61, 124, 0.2);
 }
 
-html, body, .wrapper {
-  height: 100%;
+//reload bootstrap styles
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2,
+.col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3,
+.col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4,
+.col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5,
+.col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7,
+.col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8,
+.col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9,
+.col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10,
+.col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12,
+.col-sm-12, .col-md-12, .col-lg-12 {
+  padding-left: 7px;
+  padding-right: 7px;
 }
 
-.container {
-  width: 1170px;
+html, body, .wrapper {
+  min-height: 100%;
+}
+
+.wrapper {
+  padding: 0 0 40px 0;
 }
 
 // No bootstrap breakpoints
+.container {
+  width: 1170px;
+}
 
 .textButton {
   color: #353535;
@@ -94,6 +112,21 @@ body {
       font-size: 13px;
       font-weight: 400;
     }
+    .alerts {
+      color: #E1001D;
+      font-family: "Arial";
+      font-size: 10px;
+      font-weight: 700;
+      width: 17px;
+      height: 17px;
+      border: 1.5px solid #E1001D;
+      border-radius: 9px;
+      position: absolute;
+      right: 7px;
+      top: 12px;
+      text-align: center;
+      line-height: 17px;
+    }
   }
 }
 
@@ -159,9 +192,39 @@ body {
         float: right;
         height: 18px;
         text-decoration: none;
-        text-indent: -99px;
-        overflow: hidden;
+        color: transparent;
         margin: 8px 0 0 16px;
+        position: relative;
+        &:hover {
+          .recall-time {
+            display: block;
+          }
+        }
+        .recall-time {
+          position: absolute;
+          display: none;
+          right: 0px;
+          top: 18px;
+          width: 100px;
+          border: 1px solid #CCC;
+          margin: 0px;
+          padding: 0;
+          li {
+            line-height: 15px;
+            border-bottom: 1px solid #CCC;
+            background: #ffffff;
+            padding: 0px 5px;
+            text-align: center;
+          }
+          a {
+            font-size: 13px;
+            color: #353535;
+            text-decoration: none;
+          }
+        }
+      }
+      &:last-child {
+        margin-bottom: 17px;
       }
     }
   }
@@ -169,10 +232,11 @@ body {
 
 .footer {
   color: #989898;
-  font-family: "Arial";
+  font-family: Arial;
   font-size: 14px;
   font-weight: 400;
-  padding: 10px 0;
-  height: 20px;
-  margin: -40px 0 0 0;
+  padding: 10px 0px;
+  height: 40px;
+  margin: -40px 0px 0px;
+  box-sizing: border-box;
 }
