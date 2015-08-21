@@ -28,6 +28,7 @@ $(document).ready(function () {
         hint: hint
     });
 
+
     //exapand
     $(".sortable").on("click", "span.k-i-arrowhead-s", function(e) {
         var contentElement = $(e.target).closest(".drag-widget").find(".widget-content");
