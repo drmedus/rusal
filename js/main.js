@@ -1,7 +1,6 @@
 $(document).ready(function () {
     $(".header-menu").kendoMenu();
-    $(".textButton").kendoButton();
-    $("#admin").kendoButton();
+    $(".textButton, .logout, .photo .about").kendoButton();
     $(".kendoSelect").kendoDropDownList();
 
     $(".sortable-col.wide").kendoSortable({
@@ -46,7 +45,6 @@ $(document).ready(function () {
             .addClass("k-i-arrowhead-s");
         kendo.fx(contentElement).expand("vertical").stop().reverse();
     });
-
 
     function placeholder(element) {
     return element.clone().addClass("placeholder");

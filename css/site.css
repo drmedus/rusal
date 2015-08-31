@@ -169,7 +169,7 @@ body {
 .content .alerts-container {
   margin-top: 17px;
 }
-.content .alerts-container .elert-item {
+.content .alerts-container .alert-item {
   background: #FFF none repeat scroll 0% 0%;
   margin: 1px 0px;
   position: relative;
@@ -178,8 +178,14 @@ body {
   height: 36px;
   vertical-align: middle;
   font-size: 1px;
+  display: block;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
-.content .alerts-container .elert-item:before {
+.content .alerts-container .alert-item:before {
   content: '';
   position: absolute;
   left: 0;
@@ -189,80 +195,87 @@ body {
   border-right: 1px solid #efefef;
   background: url("../img/alerts-sprite.png") 10px 9px no-repeat transparent;
 }
-.content .alerts-container .elert-item.task:before {
+.content .alerts-container .alert-item.task:before {
   background-position: -90px 9px;
 }
-.content .alerts-container .elert-item.important:before {
+.content .alerts-container .alert-item.important:before {
   background-position: -40px 9px;
 }
-.content .alerts-container .elert-item.link:before {
+.content .alerts-container .alert-item.link:before {
   background-position: 10px 9px;
 }
-.content .alerts-container .elert-item .alert-text {
+.content .alerts-container .alert-item .alert-text {
   padding: 0px 0px 0px 15px;
   display: inline-block;
   font-size: 13px;
   vertical-align: middle;
   line-height: 15px;
 }
-.content .alerts-container .elert-item .close-alert {
+.content .alerts-container .alert-item .close-alert {
   display: inline-block;
   width: 18px;
-  background: transparent url("../img/alerts-sprite.png") no-repeat scroll 0px -29px;
+  background: transparent url("../img/alerts-sprite.png") no-repeat scroll 0px -21px;
   float: right;
-  height: 18px;
+  height: 100%;
   text-decoration: none;
   text-indent: -99px;
   overflow: hidden;
-  margin: 8px 0 0 16px;
+  margin: 0 0 0 16px;
 }
-.content .alerts-container .elert-item .recall-alert {
+.content .alerts-container .alert-item .recall-alert {
   display: inline-block;
   width: 18px;
-  background: transparent url("../img/alerts-sprite.png") no-repeat scroll -50px -29px;
+  background: transparent url("../img/alerts-sprite.png") no-repeat scroll -50px -21px;
   float: right;
-  height: 18px;
+  height: 100%;
   text-decoration: none;
   color: transparent;
-  margin: 8px 0 0 16px;
+  margin: 0 0 0 16px;
   position: relative;
 }
-.content .alerts-container .elert-item .recall-alert:hover .recall-time {
+.content .alerts-container .alert-item .recall-alert:hover .recall-time {
   display: block;
 }
-.content .alerts-container .elert-item .recall-alert .recall-time {
+.content .alerts-container .alert-item .recall-alert .recall-time {
   position: absolute;
   display: none;
   right: 0px;
-  top: 18px;
+  top: 27px;
   width: 100px;
   border: 1px solid #CCC;
   margin: 0px;
   padding: 0;
   z-index: 2;
 }
-.content .alerts-container .elert-item .recall-alert .recall-time li {
+.content .alerts-container .alert-item .recall-alert .recall-time li {
   line-height: 15px;
   border-bottom: 1px solid #CCC;
   background: #ffffff;
   padding: 0px 5px;
   text-align: center;
+  list-style: none;
+  color: #000;
+  font-size: 12px;
 }
-.content .alerts-container .elert-item .recall-alert .recall-time a {
+.content .alerts-container .alert-item .recall-alert .recall-time a {
   font-size: 13px;
   color: #353535;
   text-decoration: none;
 }
-.content .alerts-container .elert-item:last-child {
+.content .alerts-container .alert-item:last-child {
   margin-bottom: 17px;
+}
+.content .alerts-container .alert-item:hover {
+  -webkit-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 3;
 }
 .content .sortable {
   display: table;
   margin: 0 0 20px;
   width: 100%;
-  background-color: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: 20px 10px 0;
+  padding: 0;
 }
 .content .sortable .sortable-col {
   display: table-cell;
@@ -270,6 +283,12 @@ body {
   vertical-align: top;
   float: none;
   padding: 0 10px;
+}
+.content .sortable .sortable-col.wide {
+  padding-left: 0;
+}
+.content .sortable .sortable-col.narrow-r {
+  padding-right: 0;
 }
 .drag-widget {
   margin: 0 0 20px 0;
@@ -288,14 +307,49 @@ body {
   border: 1px dashed #a6a6a6;
 }
 .drag-widget .widget-content {
-  padding: 10px;
+  padding: 5px 0 10px 0;
   min-height: 50px;
 }
-.drag-widget h3 {
+.drag-widget .widget-content ul {
+  margin: 0;
+  padding: 0;
+}
+.drag-widget .widget-content ul li {
+  list-style: none;
+  line-height: 25px;
+}
+.drag-widget .widget-content .arrow-item {
+  padding: 0 10px 0 28px;
+  position: relative;
+  display: block;
+  height: 25px;
+  line-height: 15px;
   font-size: 12px;
+  font-weight: 700;
+  color: #000;
+}
+.drag-widget .widget-content .arrow-item:hover {
+  text-decoration: none;
+  background: #000;
+  background: #EFEFEF;
+}
+.drag-widget .widget-content .arrow-item:after {
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 18px;
+  left: 10px;
+  top: 0;
+  background: url("../img/icon-sprite.png") 0 -51px no-repeat transparent;
+}
+.drag-widget h3 {
+  font-size: 13px;
   padding: 8px 10px;
   text-transform: uppercase;
   border-bottom: 1px solid #e7e7e7;
+  color: #000;
+  font-weight: 700;
 }
 .drag-widget h3 span {
   float: right;
@@ -308,30 +362,68 @@ body {
 .drag-widget.profile .photo {
   display: inline-block;
   vertical-align: top;
+  padding: 0 10px;
 }
-.drag-widget.profile .photo img {
-  display: block;
+.drag-widget.profile .photo .photo-container {
+  overflow: hidden;
+  text-align: center;
+  line-height: 100%;
+  vertical-align: middle;
+  -webkit-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+}
+.drag-widget.profile .photo .photo-container img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.drag-widget.profile .photo .about {
+  width: 100%;
 }
 .drag-widget.profile .profile-info {
   display: inline-block;
   vertical-align: top;
 }
-.drag-widget.profile .profile-info p {
+.drag-widget.profile .profile-info .row-item {
   margin: 0;
   padding: 0;
+  line-height: 25px;
+  border-bottom: 1px solid #EFEFEF;
 }
-.drag-widget.profile .profile-info p.name {
+.drag-widget.profile .profile-info .row-item.name {
   font-weight: 700;
 }
-.drag-widget.medicine .item {
+.sortable-col.narrow-l .drag-widget.profile .photo {
+  display: block;
+  vertical-align: top;
+  padding: 0px 10px;
+  width: 140px;
+  margin: 0 auto 10px;
+}
+.sortable-col.narrow-l .drag-widget.profile .profile-info .row-item {
+  padding: 0 10px;
+}
+.drag-widget.medicine li {
   display: inline-block;
   vertical-align: top;
   text-align: center;
-  width: 115px;
+  width: 100px;
+  margin: 0 0 10px 0;
+}
+.drag-widget.medicine .item {
   padding: 0 0 5px 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: #000;
+  line-height: 15px;
 }
 .drag-widget.medicine .item item-img {
   text-align: center;
+}
+.sortable-col.narrow-l .drag-widget.medicine li {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  width: 130px;
 }
 .drag-widget.salary .item {
   display: block;
@@ -351,4 +443,10 @@ body {
   height: 40px;
   margin: -40px 0px 0px;
   box-sizing: border-box;
+}
+.lt-ie9 .alerts-container {
+  margin-bottom: 17px;
+}
+.lt-ie9 .content .alerts-container .alert-item .recall-alert {
+  font-size: 0px;
 }
