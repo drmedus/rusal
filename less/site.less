@@ -103,22 +103,21 @@ body {
   .header-controls {
     margin-top: 20px;
     .k-widget.k-dropdown {
-      width: 77%;
+      width: 54%;
       margin: 0 10px 0 0;
     }
   }
+
+  .header-menu li:nth-child(3){
+    padding-right: 20px;
+  }
+
   .header-menu-container {
     margin-top: 18px;
   }
   &-menu {
     .k-item {
-      & > .k-link {
-        width: 144.5px;
-        padding: 1.071em 0px;
-        text-align: center;
-        padding-left: 0;
-        padding-right: 0;
-      }
+      & > .k-link {}
     }
     a {
       color: #343434 !important;
@@ -136,8 +135,8 @@ body {
       border: 1.5px solid #E1001D;
       border-radius: 9px;
       position: absolute;
-      right: 7px;
-      top: 12px;
+      right: 6px;
+      top: 13px;
       text-align: center;
       line-height: 17px;
     }
@@ -295,28 +294,30 @@ body {
     border: 1px dashed #a6a6a6;
   }
   .widget-content {
-    padding: 5px 0 10px 0;
+    padding: 10px 0;
     min-height: 50px;
     ul {
       margin: 0;
       padding: 0;
       li {
         list-style: none;
-        line-height: 25px;
+      }
+      li:last-child {
+        a.arrow-item {
+          border-bottom: none;
+        }
       }
     }
     .arrow-item {
-      padding: 0 10px 0 28px;
+      padding: 9px 10px 9px 28px;
       position: relative;
       display: block;
-      height: 25px;
-      line-height: 15px;
       font-size: 12px;
-      font-weight: 700;
+      font-weight: bold;
       color: #000;
+      border-bottom: 1px solid #EFEFEF;
       &:hover {
         text-decoration: none;
-        background: #000;
         background: #EFEFEF;
       }
       &:after {
@@ -326,9 +327,20 @@ body {
         position: absolute;
         width: 18px;
         left: 10px;
-        top: 0;
+        top: 5px;
         background: url("../img/icon-sprite.png") 0 -51px no-repeat transparent;
-
+      }
+      .profile-inf {
+        color: #000;
+      }
+    }
+    .no-arrow-item {
+      padding: 5px 10px;
+      color: #989898;
+      border-bottom: 1px solid #EFEFEF;
+      .profile-inf {
+        padding-left: 10px;
+        color: #000;
       }
     }
   }
@@ -351,10 +363,11 @@ body {
 }
 
 .drag-widget.profile {
+  .widget-content {padding: 10px;}
   .photo {
     display: inline-block;
+    width: 100%;
     vertical-align: top;
-    padding: 0 10px;
     .photo-container {
       overflow: hidden;
       text-align: center;
@@ -362,6 +375,7 @@ body {
       vertical-align: middle;
       -webkit-box-shadow: 0 0 2px 1px rgba(000,0000,000,0.1);
       box-shadow: 0 0 2px 1px rgba(000,0000,000,0.1);
+      background-color: #777;
       img {
         max-width: 100%;
         max-height: 100%;
@@ -369,19 +383,25 @@ body {
     }
     .about {
       width: 100%;
+      border-radius: 0 0 2px 2px;
     }
   }
   .profile-info {
-    display: inline-block;
-    vertical-align: top;
+    display: block;
+    padding: 20px 0 0;
     .row-item {
       margin: 0;
-      padding: 0;
-      line-height: 25px;
+      padding: 5px 0;
+      color: #989898;
       border-bottom: 1px solid #EFEFEF;
-      &.name {
-        font-weight: 700;
+      &.name {}
+      .profile-inf {
+        padding-left: 10px;
+        color: #000;
       }
+    }
+    .row-item:last-child {
+      border-bottom: none;
     }
 
   }
@@ -391,14 +411,11 @@ body {
   .photo {
     display: block;
     vertical-align: top;
-    padding: 0px 10px;
-    width: 140px;
-    margin: 0 auto 10px;
+    width: 100%;
+    margin: 0 auto 0;
   }
   .profile-info {
-    .row-item {
-      padding: 0 10px;
-    }
+    .row-item {}
   }
 }
 
@@ -407,8 +424,9 @@ body {
     display: inline-block;
     vertical-align: top;
     text-align: center;
-    width: 100px;
+    width: 130px;
     margin: 0 0 10px 0;
+    a {display: block;}
   }
   .item {
     padding: 0 0 5px 0;
@@ -416,8 +434,9 @@ body {
     font-weight: 700;
     color: #000;
     line-height: 15px;
-    item-img {
-      text-align: center;
+    img {
+      display: block;
+      margin: 0 auto 10px;
     }
   }
 }
@@ -454,12 +473,12 @@ body {
   font-family: Arial;
   font-size: 14px;
   font-weight: 400;
-  padding: 10px 0px;
+  padding: 10px 0;
   height: 40px;
-  margin: -40px 0px 0px;
+  margin: 0;
   box-sizing: border-box;
+  background-color: #E4E4E4;
 }
-
 
 //styles for IE8
 
@@ -468,6 +487,6 @@ body {
     margin-bottom: 17px;
   }
   .content .alerts-container .alert-item .recall-alert {
-    font-size: 0px;
+    font-size: 0;
   }
 }

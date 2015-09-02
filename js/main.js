@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $(".header-menu").kendoMenu();
-    $(".textButton, .logout, .photo .about").kendoButton();
+    $(".textButton, .logout, .about").kendoButton();
     $(".kendoSelect").kendoDropDownList();
 
     $(".sortable-col.wide").kendoSortable({
